@@ -1,4 +1,5 @@
 const assert = require('chai').assert;
+const sinon = require('sinon'); // import sinon package
 const app = require('../app');
 
 describe('App',function(){
@@ -20,5 +21,15 @@ describe('App',function(){
     it('addResult should return type number', function(){
         var result=app.addResult();
         assert.typeOf(result,'number');
+        /*const clock = sinon.useFakeTimers(); // create a fake clock
+        console.log('clock', clock.now);
+        setTimeout(function(){
+            console.log('Timer executed');
+            
+        },100);
+        clock.tick(100); // advance the clock by 100ms
+        console.log('clock', clock.now); // clock 100
+        clock.tick(200); // advance the clock by 200ms
+        console.log('clock', clock.now); // clock 200 */
     })
 })
